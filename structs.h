@@ -6,7 +6,7 @@
 /*   By: hladeiro <hladeiro@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 14:24:02 by hladeiro          #+#    #+#             */
-/*   Updated: 2025/04/18 14:24:03 by hladeiro         ###   ########.fr       */
+/*   Updated: 2025/04/18 22:05:40 by hladeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,12 +43,12 @@ typedef struct s_player
 
 typedef struct s_game
 {
-	void	*mlx;
-	t_win	win;
-	int		keydown[1000];
-	double	(*dt)(void);
+	void		*mlx;
+	t_win		win;
+	int			keydown[900000];
+	double		(*dt)(void);
 	void		(*loop)(struct s_game *game);
-	void			(*animate)(struct s_game *game);
-}	t_game;
+	void		(*animate)(struct s_game *game);
+}				t_game;
 
 #endif

@@ -12,7 +12,6 @@
 
 #include "cubo.h"
 
-
 static int	update(t_game *g)
 {
 	if (g->animate)

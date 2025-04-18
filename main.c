@@ -1,10 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hladeiro <hladeiro@student.42lisboa.com>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/18 22:05:50 by hladeiro          #+#    #+#             */
+/*   Updated: 2025/04/18 22:05:51 by hladeiro         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "cubo.h"
 
 static void	move_player(t_game *g)
 {
 	p()->pos.x += (p()->vel.x) + (p()->vel.x * g->dt());
 	p()->pos.y += (p()->vel.y) + (p()->vel.y * g->dt());
-
 	if (p()->pos.x < 0)
 		p()->pos.x = 0;
 	if (p()->pos.x > 800 - 20)
@@ -59,7 +70,7 @@ static void	game_loop(t_game *g)
 	return (update_game(g, g->dt()));
 }
 
-void	game_start(void)
+static void	game_start(void)
 {
 	t_game	*g;
 
