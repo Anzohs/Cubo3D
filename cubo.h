@@ -6,7 +6,7 @@
 /*   By: hladeiro <hladeiro@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 19:12:28 by hladeiro          #+#    #+#             */
-/*   Updated: 2025/04/15 19:59:50 by hladeiro         ###   ########.fr       */
+/*   Updated: 2025/04/18 14:21:25 by hladeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@
 #  include "mlx_linux/mlx.h"
 # endif
 
-# include "libft/libft.h"
+# include "functions.h"
 
 # if defined(__APPLE__) && defined(__MACH__)
-#  define LEFT_KEY				123	
-#  define RIGHT_KEY				124	
+#  define LEFT_KEY				123
+#  define RIGHT_KEY				124
 #  define UP_KEY				126
-#  define DOWN_KEY				125	
+#  define DOWN_KEY				125
 #  define A_KEY					0
 #  define S_KEY					1
 #  define D_KEY					2

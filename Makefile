@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-
+NAME = CUBE
 
 MLXFLAGS = -L ./mlx/ -lmlx -framework OpenGL -framework AppKit -lz
 ifeq ($(shell uname), Linux)
