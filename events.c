@@ -6,7 +6,7 @@
 /*   By: hladeiro <hladeiro@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 22:04:56 by hladeiro          #+#    #+#             */
-/*   Updated: 2025/04/18 22:04:57 by hladeiro         ###   ########.fr       */
+/*   Updated: 2025/04/18 21:45:38 by malourei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 void	key_pressed(t_game *g)
 {
 	if (g->keydown[UP_KEY] || g->keydown[W_KEY])
-		p()->vel.y = -3;
+		p()->vel.y = -1;
 	if (g->keydown[DOWN_KEY] || g->keydown[S_KEY])
-		p()->vel.y = 3;
+		p()->vel.y = 1;
 	if (g->keydown[D_KEY] || g->keydown[RIGHT_KEY])
-		p()->vel.x = 3;
+		p()->vel.x = 1;
 	if (g->keydown[A_KEY] || g->keydown[LEFT_KEY])
-		p()->vel.x = -3;
+		p()->vel.x = -1;
 }
 
 void	key_released(t_game *g)
@@ -36,16 +36,16 @@ void	key_released(t_game *g)
 
 static int	keypress(int key, t_game *g)
 {
-	if (key == 53 || key == 65307)
+	if (key == ESC)
 		exit(0);
-	if (key < 1000)
+	if (key < 90000)
 		g->keydown[key] = true;
 	return (0);
 }
 
 static int	keyrelease(int k, t_game *g)
 {
-	if (k < 1000)
+	if (k < 90000)
 		g->keydown[k] = false;
 	return (0);
 }

@@ -19,12 +19,14 @@ SRC = game.c events.c get_delta_time.c main.c
 OBJ_DIR = obj
 OBJ := $(patsubst %.c,$(OBJ_DIR)/%.o,$(SRC))
 INC = -I. -Ilibft -Imlx
+M = mlx
 
 MLXFLAGS = -L ./mlx/ -lmlx -framework OpenGL -framework AppKit -lz
 ifeq ($(shell uname), Linux)
 	MLXFLAGS = -L ./mlx_linux/ -lmlx -Imlx -lXext -lX11
 	MLX = mlx_linux/libmlx.a
 	INC = -I. -Ilibft -Imlx_linux
+	M = mlx_linux
 endif
 
 all: $(NAME)
@@ -37,7 +39,7 @@ $(LIBFT):
 	@$(MAKE) -C libft
 
 $(MLX):
-	@$(MAKE) -C mlx
+	@$(MAKE) -C $(M)
 
 $(NAME): $(LIBFT) $(MLX) $(OBJ)
 	$(CC) $(FLAGS) $(OBJ) $(LIBFT) $(MLXFLAGS) -o $(NAME)
@@ -50,6 +52,6 @@ clean:
 
 fclean: clean
 	@rm -f $(NAME)
-	@$(MAKE) -C mlx clean
+	@$(MAKE) -C $(M) clean
 	@$(MAKE) -C libft fclean
 	@echo "Removed executable: $(NAME)"

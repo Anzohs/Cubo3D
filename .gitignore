@@ -1,3 +1,4 @@
 mlx/
 *.o
 .DS_Store
+mlx_linux/
