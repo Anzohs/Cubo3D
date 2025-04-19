@@ -13,32 +13,21 @@
 #ifndef STRUCTS_H
 # define STRUCTS_H
 
+# include "map/map.h"
+
 typedef char	*t_string;
-
-typedef struct s_2Vector
-{
-	int			x;
-	int			y;
-}				t_2Vector;
-
-typedef struct s_3Vector
-{
-	int			x;
-	int			y;
-	int			z;
-}				t_3Vector;
 
 typedef struct s_win
 {
 	void		*mlx;
 	void		*win;
-	t_2Vector	size;
+	t_vector	size;
 }				t_win;
 
 typedef struct s_player
 {
-	t_2Vector	vel;
-	t_2Vector	pos;
+	t_vector	vel;
+	t_vector	pos;
 }				t_player;
 
 typedef struct s_game
