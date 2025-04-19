@@ -14,8 +14,15 @@
 
 static int	update(t_game *g)
 {
-	if (g->animate)
-		g->animate(g);
+	static double	current;
+
+	current += get_delta_time();
+	if (current >= 1.0 / 120.0)
+	{
+		if (g->animate)
+			g->animate(g);
+		current = 0;
+	}
 	return (0);
 }
 

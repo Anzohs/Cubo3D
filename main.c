@@ -12,10 +12,19 @@
 
 #include "cubo.h"
 
-static void	move_player(t_game *g)
+static void	move_player(t_game *g, double dt)
 {
-	p()->pos.x += (p()->vel.x) + (p()->vel.x * g->dt());
-	p()->pos.y += (p()->vel.y) + (p()->vel.y * g->dt());
+	const float s = 300.0;
+	if (g->keydown[UP_KEY] || g->keydown[W_KEY])
+		p()->vel.y = (-s * dt) - 3;
+	else if (g->keydown[S_KEY] || g->keydown[DOWN_KEY])
+		p()->vel.y = (s * dt) + 3;
+	if (g->keydown[A_KEY] || g->keydown[LEFT_KEY])
+		p()->vel.x = (-s * dt) - 3;
+	else if (g->keydown[D_KEY] || g->keydown[RIGHT_KEY])
+		p()->vel.x = (s * dt) + 3;
+	p()->pos.x += p()->vel.x;
+	p()->pos.y += p()->vel.y;
 	if (p()->pos.x < 0)
 		p()->pos.x = 0;
 	if (p()->pos.x > 800 - 20)
@@ -60,7 +69,7 @@ static void	update_game(t_game *g, double dt)
 {
 	mlx_clear_window(g->mlx, g->win.win);
 	key_pressed(g);
-	move_player(g);
+	move_player(g, g->dt());
 	draw_player(g);
 	key_released(g);
 }
