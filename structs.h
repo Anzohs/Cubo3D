@@ -28,6 +28,7 @@ typedef struct s_player
 {
 	t_vector	vel;
 	t_vector	pos;
+	double		angle;
 }				t_player;
 
 typedef struct s_img

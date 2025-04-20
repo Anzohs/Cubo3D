@@ -20,6 +20,11 @@
 # endif
 
 # include "functions.h"
+# include <math.h>
+# ifndef PI
+#  define PI 3.1415926535
+# endif
+
 
 # if defined(__APPLE__) && defined(__MACH__)
 #  define LEFT_KEY				123

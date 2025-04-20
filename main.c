@@ -102,7 +102,6 @@ static void	draw_map_and_player_to_image(t_game *g)
 		}
 	}
 
-	// Draw the map
 	for (y = 0; y < MAP_HEIGHT; y++)
 	{
 		for (x = 0; x < MAP_WIDTH; x++)
