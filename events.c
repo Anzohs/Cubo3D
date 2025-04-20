@@ -55,5 +55,5 @@ void	event_handler(t_game *game)
 {
 	mlx_hook(game->win.win, 2, 1L << 0, keypress, game);
 	mlx_hook(game->win.win, 3, 1L << 1, keyrelease, game);
-	mlx_do_key_autorepeatoff(game->mlx);
+	//mlx_do_key_autorepeatoff(game->mlx);
 }
