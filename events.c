@@ -19,9 +19,9 @@ void	key_pressed(t_game *g)
 		p()->vel.y = -3;
 	if (g->keydown[DOWN_KEY] || g->keydown[S_KEY])
 		p()->vel.y = 3;
-	if (g->keydown[D_KEY] || g->keydown[RIGHT_KEY])
+	if (g->keydown[D_KEY])
 		p()->vel.x = 3;
-	if (g->keydown[A_KEY] || g->keydown[LEFT_KEY])
+	if (g->keydown[A_KEY])
 		p()->vel.x = -3;
 }
 
@@ -30,8 +30,7 @@ void	key_released(t_game *g)
 	if (!g->keydown[UP_KEY] && !g->keydown[W_KEY] && !g->keydown[DOWN_KEY]
 		&& !g->keydown[S_KEY])
 		p()->vel.y = 0;
-	if (!g->keydown[D_KEY] && !g->keydown[RIGHT_KEY] && !g->keydown[A_KEY]
-		&& !g->keydown[LEFT_KEY])
+	if (!g->keydown[D_KEY] && !g->keydown[A_KEY])
 		p()->vel.x = 0;
 }
 

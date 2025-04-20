@@ -17,6 +17,12 @@
 
 typedef char	*t_string;
 
+typedef struct	s_vec
+{
+	double	x;
+	double	y;
+}		t_vec;
+
 typedef struct s_win
 {
 	void		*mlx;
@@ -28,6 +34,8 @@ typedef struct s_player
 {
 	t_vector	vel;
 	t_vector	pos;
+	t_vector	dir;
+	t_vec			cam;
 	double		angle;
 }				t_player;
 
