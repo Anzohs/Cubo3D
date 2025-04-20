@@ -11,17 +11,19 @@
 /* ************************************************************************** */
 
 #include "cubo.h"
+#include "mlx/mlx.h"
+#include "structs.h"
 
 static int	update(t_game *g)
 {
 	static double	current;
 
 	current += get_delta_time();
-	if (current >= 1.0 / 60.0)
+	if (current >= 1.0 / 10.0)
 	{
 		if (g->animate)
 			g->animate(g);
-		current = 0;
+		current -= 1.0 / 10.0;
 	}
 	return (0);
 }
@@ -50,6 +52,9 @@ t_game	*inti_game(void)
 	mlx_hook(g->win.win, 17, (1L << 0), &exit_t, g);
 	g->loop = loop;
 	g->dt = get_delta_time;
+	g->map = ft_calloc(sizeof(t_img), 1);
+	g->map->img = mlx_new_image(g->mlx, 800, 600);
+	g->map->addr = mlx_get_data_addr(g->map->img, &g->map->bpp, &g->map->line_len, &g->map->endian);
 	mlx_loop_hook(g->mlx, &update, g);
 	return (g);
 }
