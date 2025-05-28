@@ -17,11 +17,11 @@
 
 typedef char	*t_string;
 
-typedef struct	s_vec
+typedef struct s_vec
 {
-	double	x;
-	double	y;
-}		t_vec;
+	double		x;
+	double		y;
+}				t_vec;
 
 typedef struct s_win
 {
@@ -35,7 +35,7 @@ typedef struct s_player
 	t_vector	vel;
 	t_vector	pos;
 	t_vector	dir;
-	t_vec			cam;
+	t_vec		cam;
 	double		angle;
 }				t_player;
 
@@ -46,8 +46,7 @@ typedef struct s_img
 	int			bpp;
 	int			line_len;
 	int			endian;
-}		t_img;
-
+}				t_img;
 
 typedef struct s_game
 {
@@ -59,5 +58,17 @@ typedef struct s_game
 	void		(*loop)(struct s_game *game);
 	void		(*animate)(struct s_game *game);
 }				t_game;
+
+typedef struct s_parsing
+{
+	t_string	so;
+	t_string	we;
+	t_string	no;
+	t_string	ea;
+	int			c[3];
+	int			f[3];
+	t_string	*map;
+	double		pos;
+}				t_parsing;
 
 #endif

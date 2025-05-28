@@ -11,8 +11,6 @@
 /* ************************************************************************** */
 
 #include "cubo.h"
-#include "mlx/mlx.h"
-#include "structs.h"
 
 static int	update(t_game *g)
 {
@@ -54,7 +52,8 @@ t_game	*inti_game(void)
 	g->dt = get_delta_time;
 	g->map = ft_calloc(sizeof(t_img), 1);
 	g->map->img = mlx_new_image(g->mlx, 800, 600);
-	g->map->addr = mlx_get_data_addr(g->map->img, &g->map->bpp, &g->map->line_len, &g->map->endian);
+	g->map->addr = mlx_get_data_addr(g->map->img, &g->map->bpp,
+			&g->map->line_len, &g->map->endian);
 	mlx_loop_hook(g->mlx, &update, g);
 	return (g);
 }
