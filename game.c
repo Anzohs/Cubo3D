@@ -47,7 +47,7 @@ t_game	*inti_game(void)
 	if (!g)
 		exit(0);
 	g->mlx = mlx_init();
-	g->win.win = mlx_new_window(g->mlx, 800, 600, "Cube");
+	g->win.win = mlx_new_window(g->mlx, 1024, 512, "Cube");
 	g->win.mlx = g->mlx;
 	mlx_hook(g->win.win, 17, (1L << 0), &exit_t, g);
 	g->loop = loop;

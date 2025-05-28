@@ -15,22 +15,37 @@
 
 void	key_pressed(t_game *g)
 {
-	if (g->keydown[UP_KEY] || g->keydown[W_KEY])
-		p()->vel.y = -3;
-	if (g->keydown[DOWN_KEY] || g->keydown[S_KEY])
-		p()->vel.y = 3;
-	if (g->keydown[D_KEY])
-		p()->vel.x = 3;
-	if (g->keydown[A_KEY])
-		p()->vel.x = -3;
+	p()->vel.x = 0;
+	p()->vel.y = 0;
+	if (g->keydown[A_KEY] || g->keydown[LEFT_KEY])
+	{
+		p()->angle -= 0.1;
+		if (p()->angle < 0)
+			p()->angle += 2 * M_PI;
+	}
+	if (g->keydown[D_KEY] || g->keydown[RIGHT_KEY])
+	{
+		p()->angle += 0.1;
+		if (p()->angle > 2 * M_PI)
+			p()->angle -= 2 * M_PI;
+	}
+	if (g->keydown[W_KEY] || g->keydown[UP_KEY])
+	{
+		p()->vel.x += cos(p()->angle) * 3;
+		p()->vel.y += sin(p()->angle) * 3;
+	}
+	if (g->keydown[S_KEY] || g->keydown[DOWN_KEY])
+	{
+		p()->vel.x -= cos(p()->angle) * 3;
+		p()->vel.y -= sin(p()->angle) * 3;
+	}
 }
 
 void	key_released(t_game *g)
 {
-	if (!g->keydown[UP_KEY] && !g->keydown[W_KEY] && !g->keydown[DOWN_KEY]
-		&& !g->keydown[S_KEY])
+	if (!g->keydown[UP_KEY] && !g->keydown[W_KEY] && !g->keydown[DOWN_KEY] && !g->keydown[S_KEY])
 		p()->vel.y = 0;
-	if (!g->keydown[D_KEY] && !g->keydown[A_KEY])
+	if (!g->keydown[D_KEY] && !g->keydown[A_KEY] && !g->keydown[RIGHT_KEY] && !g->keydown[LEFT_KEY])
 		p()->vel.x = 0;
 }
 
