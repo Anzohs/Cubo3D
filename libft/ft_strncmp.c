@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hladeiro <hladeiro@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: malourei <malourei@student.42lisboa.pt>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 19:18:27 by hladeiro          #+#    #+#             */
-/*   Updated: 2024/04/18 19:18:28 by hladeiro         ###   ########.fr       */
+/*   Updated: 2025/06/12 09:34:31 by malourei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,4 +22,21 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	if (i == n)
 		return (0);
 	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+}
+
+int	ft_strncmp_reverse(const char *s1, const char *s2, size_t n)
+{
+	size_t	i;
+	int		j;
+
+	i = ft_strlen(s1) - 1;
+	j = (int)n - 1;
+	while (j >= 0)
+	{
+		if (s1[i] != s2[j])
+			return (1);
+		i--;
+		j--;
+	}
+	return (0);
 }

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: hladeiro <hladeiro@student.42lisboa.com    +#+  +:+       +#+         #
+#    By: malourei <malourei@student.42lisboa.pt>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/18 19:11:05 by hladeiro          #+#    #+#              #
-#    Updated: 2024/10/22 22:52:14 by hladeiro         ###   ########.fr        #
+#    Updated: 2025/06/12 09:37:36 by malourei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ ft_toupper.c ft_calloc.c ft_isdigit.c ft_memset.c ft_memcpy.c \
 ft_split.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c\
 ft_isupper.c ft_striteri.c ft_memchr.c ft_strlcat.c\
 ft_strjoin.c ft_strtrim.c ft_islower.c ft_strmapi.c\
-get_next_line.c get_next_line_utils.c\
+get_next_line.c get_next_line_utils.c ft_split_new.c\
 
 OBJS			= $(SRCS:.c=.o)
 

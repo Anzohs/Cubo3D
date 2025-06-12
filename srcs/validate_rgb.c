@@ -6,7 +6,7 @@
 /*   By: malourei <malourei@student.42lisboa.pt>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/23 22:05:10 by malourei          #+#    #+#             */
-/*   Updated: 2025/05/24 22:24:08 by malourei         ###   ########.fr       */
+/*   Updated: 2025/06/03 14:39:32 by malourei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ static int	val_rgb_digits(char **strs, t_map *map)
 		if (nb == -1)
 		{
 			clean(map);
+			ft_close(map->fd);
 			exit (1);
 		}
 		i++;

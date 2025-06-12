@@ -6,7 +6,7 @@
 /*   By: malourei <malourei@student.42lisboa.pt>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 22:24:52 by malourei          #+#    #+#             */
-/*   Updated: 2025/05/27 18:24:32 by malourei         ###   ########.fr       */
+/*   Updated: 2025/06/06 11:11:45 by malourei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,14 +34,6 @@ void	ft_close(int fd)
 		close (fd);
 }
 
-void	close_fds(t_map *map)
-{
-	ft_close(map->textures.fd_ea);
-	ft_close(map->textures.fd_no);
-	ft_close(map->textures.fd_so);
-	ft_close(map->textures.fd_we);
-}
-
 void	clean(t_map *map)
 {
 	clear_strs(map->coor_c);
@@ -50,5 +42,6 @@ void	clean(t_map *map)
 	free(map->textures.tex_no);
 	free(map->textures.tex_so);
 	free(map->textures.tex_we);
-	close_fds(map);
+	if (map->map)
+		clear_strs(map->map);
 }
